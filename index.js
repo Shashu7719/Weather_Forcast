@@ -1,5 +1,5 @@
 const express= require("express");
-const bodyParser=require("body-Parser");
+const bodyParser=require("body-parser");
 const https = require('https');
 
 
@@ -35,6 +35,6 @@ app.post("/",function(req,res){
     // "<h1> weather is </h1>" + d +"<h2>Temperature is</h2>" + temp +" "+ i 
 });
 
-app.listen(3000,function(){
-    console.log("Server is running");
-});
+ app.listen(process.env.PORT || 3000, function(){
+	console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
